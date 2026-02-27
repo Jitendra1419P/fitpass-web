@@ -310,8 +310,91 @@ export default function Home() {
 
     {/* CTA */}
 
-    {/* Footer */}
+     <section className="relative overflow-hidden bg-primary text-primary-foreground">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.1),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(255,255,255,0.1),transparent_50%)]" />
 
+        <div className="container relative mx-auto px-4 py-20 md:py-28">
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="text-3xl md:text-5xl font-bold mb-6">
+              Ready to Transform Your Fitness?
+            </h2>
+            <p className="text-xl opacity-90 mb-10 max-w-2xl mx-auto">
+              Join 50,000+ members who've discovered a better way to stay fit.
+              Start your {FREE_TRIAL_DAYS}-day free trial today.
+            </p>
+
+            <SignedOut>
+              <SignUpButton mode="modal">
+                <Button
+                  size="lg"
+                  variant="secondary"
+                  className="text-lg px-10 h-14 rounded-full font-semibold"
+                >
+                  Get Started Now
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+              </SignUpButton>
+            </SignedOut>
+            <SignedIn>
+              <Button
+                size="lg"
+                variant="secondary"
+                className="text-lg px-10 h-14 rounded-full font-semibold"
+                asChild
+              >
+                <Link href="/classes">
+                  Browse Classes
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Link>
+              </Button>
+            </SignedIn>
+
+            <div className="flex flex-wrap items-center justify-center gap-6 mt-10 text-sm opacity-80">
+              <div className="flex items-center gap-2">
+                <Check className="h-4 w-4" />
+                <span>{FREE_TRIAL_DAYS}-day free trial</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Check className="h-4 w-4" />
+                <span>Cancel anytime</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Check className="h-4 w-4" />
+                <span>No commitment</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    {/* Footer */}
+    <footer className="border-t bg-muted/20">
+        <div className="container mx-auto px-4 py-10">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+            <div className="flex items-center gap-6 text-sm text-muted-foreground">
+              <Link
+                href="/classes"
+                className="hover:text-foreground transition"
+              >
+                Classes
+              </Link>
+              <Link href="/map" className="hover:text-foreground transition">
+                Studios
+              </Link>
+              <Link
+                href="/upgrade"
+                className="hover:text-foreground transition"
+              >
+                Pricing
+              </Link>
+            </div>
+            <p className="text-sm text-muted-foreground">
+              © {new Date().getFullYear()} FitPass. All rights reserved.
+            </p>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
