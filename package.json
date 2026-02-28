@@ -8,11 +8,13 @@
     "start": "next start",
     "lint": "biome check",
     "format": "biome format --write",
-    "sanity": "sanity"
+    "sanity": "sanity",
+    "typegen": "sanity schema extract && sanity typegen generate"
   },
   "dependencies": {
     "@clerk/nextjs": "^6.38.2",
     "@radix-ui/react-dropdown-menu": "^2.1.16",
+    "@sanity/client": "^7.16.0",
     "@sanity/icons": "^3.7.4",
     "@sanity/image-url": "^1.2.0",
     "@sanity/ui": "^3.1.13",
